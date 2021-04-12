@@ -7,13 +7,15 @@
     />
 
     <v-sheet height="100" width="100%" color=""></v-sheet>
-    <h1 style="text-align:center">
-      활발한 논쟁이 이루어지고 있는 댓글 많은 게시글과 <br />
-      많은 사람들의 공감을 얻은 좋아요 많은 게시글을 확인해보세요!
-    </h1>
-    <!-- 인기 순위 -->
-    <div class="mt-10">
-      <v-row>
+
+    <div>
+      <h1 style="text-align:center">
+        활발한 논쟁이 이루어지고 있는 댓글 많은 게시글과 <br />
+        많은 사람들의 공감을 얻은 좋아요 많은 게시글을 확인해보세요!
+      </h1>
+      <!-- 인기 순위 -->
+      <v-row class="mt-10">
+        <v-col cols="auto" class="mr-auto"></v-col>
         <v-card
           class="my-5 ml-5 elevation-5"
           style="border-radius: 15px;"
@@ -28,11 +30,17 @@
           <v-divider></v-divider>
 
           <v-card-text class="mt-4">
-            <div class="choice_cursor comment-card" v-for="(item, n) in commentRank" :key="item.id" @click="commentMove(item)">
+            <div
+              class="choice_cursor comment-card"
+              v-for="(item, n) in commentRank"
+              :key="item.id"
+              @click="commentMove(item)"
+            >
               <span style="color:blue;">{{ n + 1 }}</span>
               <span class="ml-4">{{ item.title }}</span>
             </div>
           </v-card-text>
+          
         </v-card>
 
         <!-- 좋아요 순위 -->
@@ -50,17 +58,24 @@
           <v-divider></v-divider>
 
           <v-card-text class="mt-4">
-            <div v-for="(item, n) in likeRank" :key="item.id">
+            <div
+              class="choice_cursor comment-card"
+              v-for="(item, n) in likeRank"
+              :key="item.id"
+              @click="commentMove(item)"
+            >
               <span style="color:blue;">{{ n + 1 }}</span>
               <span class="ml-4">{{ item.title }}</span>
             </div>
           </v-card-text>
         </v-card>
+        <v-col cols="auto" class="mr-auto"></v-col>
       </v-row>
     </div>
 
     <!-- 해시태그 워드 클라우드 -->
-
+    <v-sheet height="100" width="100%" color=""></v-sheet>
+    <h1>여기 이슈의 모든 해시태그의 감정 그래프를 확인해보세요!</h1>
     <wordcloud
       class="mt-10"
       :data="hashAll"
@@ -71,13 +86,17 @@
       :wordClick="wordClickHandler"
     >
     </wordcloud>
-
+    <v-col cols="12">
+    <div class="text-center">
+      <h3>클라우드를 클릭 해보세요! 밑에 나타납니다!</h3>
+    </div>
+    </v-col>
     <div>
       <graph-bubblecloud
         class="mt-10"
         :width="1000"
         :height="500"
-        :padding-top="5"
+        :padding-top="10"
         :padding-bottom="0"
         :padding-left="0"
         :padding-right="0"
@@ -86,11 +105,6 @@
         :render-interval="0"
         @click="onClickEvent"
       >
-        <note
-          :text="'클라우드 글씨를 클릭해보세요! 여기에 나타납니다.'"
-          :align="'center'"
-          :size="20"
-        ></note>
       </graph-bubblecloud>
     </div>
   </v-row>
@@ -153,9 +167,9 @@ export default {
       console.log(obj.data);
     },
 
-    commentMove(commentData){
-      this.$router.push(`/opinionDetail?id=${commentData.id}`)
-    }
+    commentMove(commentData) {
+      this.$router.push(`/opinionDetail?id=${commentData.id}`);
+    },
   },
   data() {
     return {
@@ -177,7 +191,7 @@ export default {
     };
   },
   created() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     this.getHashAll();
     this.getCommentRank();
     this.getLikeRank();
@@ -187,8 +201,11 @@ export default {
 
 <style>
 .comment-card:hover {
-  background-color: #FAEAD4;
+  background-color: #faead4;
   border-radius: 20px 20px 20px 20px;
   padding: 4px;
+}
+.mgz {
+  background-color: F4F4F4;
 }
 </style>
