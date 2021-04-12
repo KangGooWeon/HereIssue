@@ -130,7 +130,7 @@
 * ERD 
   * 상세 보기 : https://www.erdcloud.com/d/HonMGuMMNZuuPfgrA
 
-![db_modeling](C:\Users\multicampus\Desktop\Sub3\README.assets\db_modeling.png)
+![image-20210403224517409](https://user-images.githubusercontent.com/42925284/114342969-dd4b5200-9b97-11eb-8e8c-9f7594254944.png)
 
 
 
@@ -138,7 +138,7 @@
   * Tool : Figma
   * 상세 보기 : https://www.figma.com/proto/wzRcxL6gBvTedlRG3ditq2/%EC%97%AC%EA%B8%B0%EC%9D%B4%EC%8A%88_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=11%3A532&scaling=min-zoom
 
-![와이어 프레임_여기이슈](C:\Users\multicampus\Desktop\와이어 프레임_여기이슈.JPG)
+![와이어 프레임_여기이슈](https://user-images.githubusercontent.com/42925284/114342999-ecca9b00-9b97-11eb-8c22-5fb89cdf0737.JPG)
 
 
 
